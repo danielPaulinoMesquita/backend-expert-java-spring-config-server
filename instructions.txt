@@ -1,0 +1,11 @@
+TO CREATE A DOCKER, YOU TO RUN A COMMAND:
+
+- `docker build -t daniel/helpdesk-config-server:latest .`
+
+what does command mean? The follow instruction say
+- `command docker -t {name}:{tag} {local when will be place}`
+
+TO PUT THIS IMAGE RECENTLY CREATED IN DOCKER HUB, YOU RUN THE FOLLOW COMMAND
+(obs: when you create image, and you want to push in docker hub,
+the name image needs to have the name of author in the first part):
+- `docker push daniel/helpdesk-config-server:latest`
