@@ -1,6 +1,6 @@
 TO CREATE A DOCKER, YOU TO RUN A COMMAND:
 
-- `docker build -t daniel/helpdesk-config-server:latest .`
+- `docker build -t danielpaulinomesquita/helpdesk-config-server:latest .`
 
 what does command mean? The follow instruction say
 - `command docker -t {name}:{tag} {local when will be place}`
@@ -8,4 +8,14 @@ what does command mean? The follow instruction say
 TO PUT THIS IMAGE RECENTLY CREATED IN DOCKER HUB, YOU RUN THE FOLLOW COMMAND
 (obs: when you create image, and you want to push in docker hub,
 the name image needs to have the name of author in the first part):
-- `docker push daniel/helpdesk-config-server:latest`
+- `docker push danielpaulinomesquita/helpdesk-config-server:latest`
+
+TO EXECUTE AND RUN THE IMAGE, YOU NEED TO RUN A COMMAND AND PASS THE ENVIRONMENT'S VARIABLES,
+LIKE THE FOLLOW LINE:
+`docker container run -p 8888:8888 --name helpdesk-config-server -e CONFIG_SERVER_URI=https://github.com/danielPaulinoMesquita/backend-expert-java-spring-configs -e CONFIG_SERVER_USERNAME={user name github} -e CONFIG_SERVER_PASSWORD={password token token} danielpaulinomesquita/helpdesk-config-server:latest`
+
+IF YOU PUT THE "-d" after run, you allow the container run in detached mode, it means in the background
+`docker container run -d -p 8888:8888 --name helpdesk-config-server -e CONFIG_SERVER_URI=https://github.com/danielPaulinoMesquita/backend-expert-java-spring-configs -e CONFIG_SERVER_USERNAME={user name github} -e CONFIG_SERVER_PASSWORD={password token token} danielpaulinomesquita/helpdesk-config-server:latest`
+
+Extra: IF YOU WANT TO REMOVE ALL CONTAINER, USE THIS COMMAND:
+docker rm $(docker ps -a)
