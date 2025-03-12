@@ -19,3 +19,6 @@ IF YOU PUT THE "-d" after run, you allow the container run in detached mode, it 
 
 Extra: IF YOU WANT TO REMOVE ALL CONTAINER, USE THIS COMMAND:
 docker rm $(docker ps -a)
+
+TO UPDATE YOUR COMTAINER: RUN THE COMMAND:
+docker build --platform linux/amd64 -t danielpaulinomesquita/helpdesk-config-server:latest .
